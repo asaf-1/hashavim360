@@ -1,0 +1,259 @@
+cat > app/templates/index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashavim360 - פיתרונות פיננסיים מתקדמים</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Rubik', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); }
+        .calculator-card { transition: all 0.3s ease; }
+        .calculator-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i data-feather="dollar-sign" class="w-8 h-8"></i>
+                    <span class="text-xl font-bold">Hashavim360</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium bg-blue-700 text-white">בית</a>
+                    <a href="about.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-600 text-white">אודות</a>
+                    <a href="services.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-600 text-white">שירותים</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-600 text-white">יצירת קשר</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">פיתרונות פיננסיים מתקדמים</h1>
+                    <p class="text-xl mb-6">הכלים המתקדמים ביותר לחישובים פיננסיים לעסקים ולפרטים</p>
+                    <a href="services.html" class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 inline-block">גלה את המחשבונים שלנו</a>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <img src="http://static.photos/finance/640x360/1" alt="Financial Solutions" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Calculators -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">מחשבונים מומלצים</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Calculator 1 -->
+                <div class="calculator-card bg-white rounded-xl shadow-md overflow-hidden p-6" data-aos="zoom-in">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i data-feather="percent" class="text-blue-600 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">מחשבון הלוואה</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">חישוב תשלומים חודשיים להלוואה לפי סכום, ריבית ומשך זמן</p>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">סכום ההלוואה</label>
+                            <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="לדוגמה: 100,000">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">ריבית שנתית (%)</label>
+                            <input type="number" step="0.01" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="לדוגמה: 5.5">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">מספר שנים</label>
+                            <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="לדוגמה: 10">
+                        </div>
+                        <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">חשב תשלום חודשי</button>
+                    </div>
+                    <div id="loanResult" class="mt-4 p-3 bg-blue-50 rounded-md hidden">
+                        <p class="text-blue-800 font-medium">תשלום חודשי משוער: <span id="monthlyPayment" class="font-bold">₪0</span></p>
+                    </div>
+                </div>
+
+                <!-- Calculator 2 -->
+                <div class="calculator-card bg-white rounded-xl shadow-md overflow-hidden p-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <i data-feather="trending-up" class="text-green-600 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">מחשבון השקעה</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">חישוב ערך עתידי של השקעה עם ריבית דריבית</p>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">סכום ראשוני</label>
+                            <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="לדוגמה: 10,000">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">תשואה שנתית (%)</label>
+                            <input type="number" step="0.01" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="לדוגמה: 7">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">מספר שנים</label>
+                            <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="לדוגמה: 5">
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition duration-300">חשב ערך עתידי</button>
+                    </div>
+                    <div id="investmentResult" class="mt-4 p-3 bg-green-50 rounded-md hidden">
+                        <p class="text-green-800 font-medium">ערך עתידי משוער: <span id="futureValue" class="font-bold">₪0</span></p>
+                    </div>
+                </div>
+
+                <!-- Calculator 3 -->
+                <div class="calculator-card bg-white rounded-xl shadow-md overflow-hidden p-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-100 p-3 rounded-full mr-4">
+                            <i data-feather="home" class="text-purple-600 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">מחשבון משכנתא</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">חישוב תשלומים חודשיים למשכנתא עם אפשרות לפיקדון</p>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">סכום המשכנתא</label>
+                            <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="לדוגמה: 800,000">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">ריבית שנתית (%)</label>
+                            <input type="number" step="0.01" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="לדוגמה: 3.5">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">מספר שנים</label>
+                            <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="לדוגמה: 25">
+                        </div>
+                        <button class="w-full bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition duration-300">חשב תשלום חודשי</button>
+                    </div>
+                    <div id="mortgageResult" class="mt-4 p-3 bg-purple-50 rounded-md hidden">
+                        <p class="text-purple-800 font-medium">תשלום חודשי משוער: <span id="mortgagePayment" class="font-bold">₪0</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">מוכנים לקחת את העסק שלכם לשלב הבא?</h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">המחשבונים שלנו הם רק ההתחלה. גלו את כל הכלים הפיננסיים המתקדמים שלנו.</p>
+            <a href="services.html" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 inline-block">לכל השירותים</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Hashavim360</h3>
+                    <p class="text-gray-400">פיתרונות פיננסיים מתקדמים לעסקים ולפרטים.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">ניווט</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">בית</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">אודות</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">שירותים</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">יצירת קשר</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">מחשבונים</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">מחשבון הלוואה</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">מחשבון השקעה</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">מחשבון משכנתא</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">מחשבון פנסיה</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">יצירת קשר</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span class="text-gray-400">רחוב העסקים 123, תל אביב</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+                            <span class="text-gray-400">03-1234567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                            <span class="text-gray-400">info@hashavim360.co.il</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 Hashavim360. כל הזכויות שמורות.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init();
+        feather.replace();
+
+        // Loan Calculator
+        document.querySelectorAll('.calculator-card button')[0].addEventListener('click', function() {
+            const amount = parseFloat(document.querySelectorAll('.calculator-card input')[0].value);
+            const rate = parseFloat(document.querySelectorAll('.calculator-card input')[1].value) / 100 / 12;
+            const years = parseFloat(document.querySelectorAll('.calculator-card input')[2].value);
+            const months = years * 12;
+            if(amount && rate && years) {
+                const x = Math.pow(1 + rate, months);
+                const monthly = (amount * rate * x) / (x - 1);
+                document.getElementById('monthlyPayment').textContent = '₪' + monthly.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                document.getElementById('loanResult').classList.remove('hidden');
+            }
+        });
+
+        // Investment Calculator
+        document.querySelectorAll('.calculator-card button')[1].addEventListener('click', function() {
+            const principal = parseFloat(document.querySelectorAll('.calculator-card input')[3].value);
+            const rate = parseFloat(document.querySelectorAll('.calculator-card input')[4].value) / 100;
+            const years = parseFloat(document.querySelectorAll('.calculator-card input')[5].value);
+            if(principal && rate && years) {
+                const amount = principal * Math.pow(1 + rate, years);
+                document.getElementById('futureValue').textContent = '₪' + amount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                document.getElementById('investmentResult').classList.remove('hidden');
+            }
+        });
+
+        // Mortgage Calculator
+        document.querySelectorAll('.calculator-card button')[2].addEventListener('click', function() {
+            const amount = parseFloat(document.querySelectorAll('.calculator-card input')[6].value);
+            const rate = parseFloat(document.querySelectorAll('.calculator-card input')[7].value) / 100 / 12;
+            const years = parseFloat(document.querySelectorAll('.calculator-card input')[8].value);
+            const months = years * 12;
+            if(amount && rate && years) {
+                const x = Math.pow(1 + rate, months);
+                const monthly = (amount * rate * x) / (x - 1);
+                document.getElementById('mortgagePayment').textContent = '₪' + monthly.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                document.getElementById('mortgageResult').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
+EOF

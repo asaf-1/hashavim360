@@ -1,0 +1,181 @@
+cat > app/templates/about.html << 'EOF'
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אודות - Hashavim360</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Rubik', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i data-feather="dollar-sign" class="w-8 h-8"></i>
+                    <span class="text-xl font-bold">Hashavim360</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-600 text-white">בית</a>
+                    <a href="about.html" class="px-3 py-2 rounded-md text-sm font-medium bg-blue-700 text-white">אודות</a>
+                    <a href="services.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-600 text-white">שירותים</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-600 text-white">יצירת קשר</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">אודות Hashavim360</h1>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+                    <img src="http://static.photos/office/640x360/2" alt="About Hashavim360" class="rounded-lg shadow-xl">
+                </div>
+                <div class="md:w-1/2 md:pr-8" data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">החזון שלנו</h2>
+                    <p class="text-gray-600 mb-4">Hashavim360 נוסדה מתוך רצון להנגיש את עולם הפיננסים לכולם. אנו מאמינים שכל אחד ראוי להבין את המצב הפיננסי שלו ולקבל החלטות מושכלות.</p>
+                    <p class="text-gray-600">המחשבונים והכלים שלנו פותחו על ידי מומחים פיננסיים עם שנים של ניסיון בתעשייה, במטרה לספק לכם את המידע המדויק והמעודכן ביותר.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3ל font-bold text-gray-800 mb-4">הצוות שלנו</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">האנשים שמאחורי הקלעים שמביאים לכם את הפתרונות הפיננסיים המתקדמים ביותר</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in">
+                    <img src="http://static.photos/people/640x360/1" alt="CEO" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">דניאל לוי</h3>
+                        <p class="text-blue-600 font-medium mb-3">מייסד ומנכ"ל</p>
+                        <p class="text-gray-600">מומחה לפיננסים עם למעלה מ-15 שנות ניסיון בייעוץ פיננסי וניהול תיקי השקעות.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="http://static.photos/people/640x360/2" alt="CFO" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">שרה כהן</h3>
+                        <p class="text-blue-600 font-medium mb-3">סמנכ"לית פיננסים</p>
+                        <p class="text-gray-600">רואת חשבון מוסמכת עם התמחות בתכנון פיננסי וניהול סיכונים פיננסיים.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="http://static.photos/people/640x360/3" alt="CTO" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">אביב ישראלי</h3>
+                        <p class="text-blue-600 font-medium mb-3">סמנכ"ל טכנולוגיה</p>
+                        <p class="text-gray-600">מומחה בפיתוח מערכות פיננסיות עם ניסיון בפיתוח אלגוריתמים לחיזוי פיננסי.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">הערכים שלנו</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">העקרונות שמנחים אותנו בכל מה שאנחנו עושים</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6" data-aos="fade-up">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="shield" class="text-blue-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">שקיפות</h3>
+                    <p class="text-gray-600">אנו מחויבים לשקיפות מלאה בכל ההיבטים הפיננסיים. אין לנו מוצרים נסתרים או עמלות חבויות.</p>
+                </div>
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="award" class="text-green-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">מקצועיות</h3>
+                    <p class="text-gray-600">הצוות שלנו מורכב ממומחים פיננסיים עם ניסיון רב שנים בתחומם, המחויבים למצוינות מקצועית.</p>
+                </div>
+                <div class="text-center p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="users" class="text-purple-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">מחויבות ללקוח</h3>
+                    <p class="text-gray-600">הצרכים שלכם נמצאים במרכז. אנו מתאימים את הפתרונות שלנו במיוחד עבורכם.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Hashavim360</h3>
+                    <p class="text-gray-400">פיתרונות פיננסיים מתקדמים לעסקים ולפרטים.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">ניווט</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">בית</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">אודות</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">שירותים</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">יצירת קשר</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">מחשבונים</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">מחשבון הלוואה</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">מחשבון השקעה</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">מחשבון משכנתא</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">מחשבון פנסיה</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">יצירת קשר</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            <span class="text-gray-400">רחוב העסקים 123, תל אביב</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+                            <span class="text-gray-400">03-1234567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                            <span class="text-gray-400">info@hashavim360.co.il</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 Hashavim360. כל הזכויות שמורות.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init();
+        feather.replace();
+    </script>
+</body>
+</html>
+EOF

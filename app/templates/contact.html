@@ -1,0 +1,211 @@
+cat > app/templates/contact.html << 'EOF'
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>יצירת קשר - Hashavim360</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Rubik', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); }
+        .contact-card { transition: all 0.3s ease; }
+        .contact-card:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i data-feather="dollar-sign" class="w-8 h-8"></i>
+                    <span class="text-xl font-bold">Hashavim360</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-600 text-white">בית</a>
+                    <a href="about.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-600 text-white">אודות</a>
+                    <a href="services.html" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-600 text-white">שירותים</a>
+                    <a href="contact.html" class="px-3 py-2 rounded-md text-sm font-medium bg-blue-700 text-white">יצירת קשר</a>
+                </div>
+                <button class="md:hidden focus:outline-none"><i data-feather="menu" class="w-6 h-6"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">יצירת קשר</h1>
+            <p class="text-xl max-w-2xl mx-auto">אנחנו כאן כדי לעזור. צרו איתנו קשר בכל שאלה או בקשה</p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="contact-card bg-gray-100 rounded-lg p-6 text-center" data-aos="zoom-in">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i data-feather="map-pin" class="text-blue-600 w-6 h-6"></i></div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">כתובת</h3>
+                    <p class="text-gray-600">רחוב העסקים 123<br>תל אביב, ישראל</p>
+                </div>
+                <div class="contact-card bg-gray-100 rounded-lg p-6 text-center" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i data-feather="phone" class="text-green-600 w-6 h-6"></i></div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">טלפון</h3>
+                    <p class="text-gray-600">03-1234567<br>נייד: 050-1234567</p>
+                </div>
+                <div class="contact-card bg-gray-100 rounded-lg p-6 text-center" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i data-feather="mail" class="text-purple-600 w-6 h-6"></i></div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">אימייל</h3>
+                    <p class="text-gray-600">info@hashavim360.co.il<br>support@hashavim360.co.il</p>
+                </div>
+            </div>
+
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-blue-600 text-white p-8" data-aos="fade-right">
+                        <h2 class="text-2xl font-bold mb-4">שלחו לנו הודעה</h2>
+                        <p class="mb-6">נשמח לענות על כל שאלה או בקשה שיש לכם. מלאו את הטופס ונחזור אליכם בהקדם.</p>
+                        <div class="flex items-center mb-4"><i data-feather="clock" class="w-5 h-5 mr-2"></i><span>שעות פעילות: א'-ה' 08:00-17:00</span></div>
+                        <div class="flex items-center"><i data-feather="check-circle" class="w-5 h-5 mr-2"></i><span>תשובה תוך 24 שעות</span></div>
+                    </div>
+                    <div class="md:w-1/2 p-8" data-aos="fade-left">
+                        <form>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-medium mb-1" for="name">שם מלא</label>
+                                <input type="text" id="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-medium mb-1" for="email">אימייל</label>
+                                <input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-medium mb-1" for="phone">טלפון</label>
+                                <input type="tel" id="phone" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-medium mb-1" for="subject">נושא</label>
+                                <select id="subject" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option>בחירת נושא</option>
+                                    <option>שאלה כללית</option>
+                                    <option>ייעוץ פיננסי</option>
+                                    <option>תמיכה טכנית</option>
+                                    <option>אחר</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-medium mb-1" for="message">הודעה</label>
+                                <textarea id="message" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">שלח הודעה</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">איך להגיע אלינו</h2>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.676715434693!2d34.78123431516499!3d32.07156598120838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b9b5a7e5c1d%3A0x3d5f3c8f7c1d6e5d!2s123%20Business%20St%2C%20Tel%20Aviv-Yafo!5e0!3m2!1sen!2sil!4v1620000000000!5m2!1sen!2sil" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">שאלות נפוצות</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up">
+                    <button class="w-full flex justify-between items-center p-4 focus:outline-none">
+                        <span class="text-lg font-medium text-gray-800">איך פותחים חשבון?</span>
+                        <i data-feather="chevron-down" class="w-5 h-5 text-gray-600 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-4 pb-4 hidden">
+                        <p class="text-gray-600">פתיחת חשבון ב-Hashavim360 היא פשוטה ומהירה. ניתן למלא טופס מקוון באתר או ליצור איתנו קשר טלפוני. נדרשים מסמכים מזהה ותעודת הכנסה לאימות.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <button class="w-full flex justify_between items-center p-4 focus:outline-none">
+                        <span class="text-lg font-medium text-gray-800">מה העמלות שלכם?</span>
+                        <i data-feather="chevron-down" class="w-5 h-5 text-gray-600 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-4 pb-4 hidden">
+                        <p class="text-gray-600">העמלות שלנו הן מהתחרותיות בשוק ומשתנות לפי סוג השירות. אנו מציעים מבנה עמלות שקוף וללא הפתעות. ניתן לראות את פירוט העמלות באתר או לקבל הסבר מיועץ שלנו.</p>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <button class="w-full flex justify-between items-center p-4 focus:outline-none">
+                        <span class="text-lg font-medium text-gray-800">איך מתבצע ייעוץ פיננסי?</span>
+                        <i data-feather="chevron-down" class="w-5 h-5 text-gray-600 transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-4 pb-4 hidden">
+                        <p class="text-gray-600">הייעוץ הפיננסי שלנו מתבצע בפגישה אישית או דרך הזום, לפי בחירתך. בתחילה נערוך אבחון פיננסי מקיף, ולאחר מכן נבנה תוכנית המותאמת לצרכים וליעדים שלך.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div><h3 class="text-xl font-bold mb-4">Hashavim360</h3><p class="text-gray-400">פיתרונות פיננסיים מתקדמים לעסקים ולפרטים.</p></div>
+                <div>
+                    <h4 class="font-semibold mb-4">ניווט</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">בית</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">אודות</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">שירותים</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">יצירת קשר</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">מחשבונים</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">מחשבון הלוואה</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">מחשבון השקעה</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">מחשבון משכנתא</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">מחשבון פנסיה</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">יצירת קשר</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i data-feather="map-pin" class="w-4 h-4 mr-2"></i><span class="text-gray-400">רחוב העסקים 123, תל אביב</span></li>
+                        <li class="flex items-center"><i data-feather="phone" class="w-4 h-4 mr-2"></i><span class="text-gray-400">03-1234567</span></li>
+                        <li class="flex items-center"><i data-feather="mail" class="w-4 h-4 mr-2"></i><span class="text-gray-400">info@hashavim360.co.il</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 Hashavim360. כל הזכויות שמורות.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init();
+        feather.replace();
+        document.querySelectorAll('.border button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                if(content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    content.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+EOF
